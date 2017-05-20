@@ -1,6 +1,6 @@
 <template>
   <div class="base">
-    <h1>Hello from vue</h1>
+    foo
   </div>
 </template>
 

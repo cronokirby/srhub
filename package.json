@@ -19,6 +19,7 @@
     "javascript-brunch": "~2.0.0",
     "node-sass": "^4.5.3",
     "uglify-js-brunch": "~2.0.1",
-    "vue-brunch": "^2.0.1"
+    "vue-brunch": "^2.0.1",
+    "vue-router": "^2.5.3"
   }
 }
