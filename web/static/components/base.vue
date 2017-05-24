@@ -1,23 +1,30 @@
 <template>
   <div class="base">
     <nav-bar></nav-bar>
+    <overlay></overlay>
   </div>
 </template>
 
 <script>
 import NavBar from "./NavBar.vue"
+import Overlay from "./Overlay.vue"
 
 export default {
   components: {
-    NavBar
+    NavBar,
+    Overlay
   }
 }
 </script>
 
 <style lang="scss">
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
-  width: 100%;
-  height: 100%;
+  position: relative;
   background-color: #3a3a49;
 }
 

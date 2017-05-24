@@ -29,10 +29,10 @@ export default {
   box-shadow: 3px 3px 20px black;
 
   a:link, a:visited {
-    color: #dce2e2;
     display: block;
     height: 100%;
     line-height: 250%;
+    color: #dce2e2;
     text-decoration: none;
     text-align: center;
   }
@@ -44,7 +44,7 @@ export default {
 
   .navlink {
     height: 40px;
-    flex-basis: 100px;
+    flex-basis: 120px;
     font-family: sans-serif;
     font-weight: bold;
   }
