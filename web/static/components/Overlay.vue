@@ -1,12 +1,11 @@
 <template>
   <div v-if="$root.overlay" class="overlay">
-    <button v-on:click="$root.overlay = false">turn me off</button>
     <sign-in></sign-in>
   </div>
 </template>
 
 <script>
-import SignIn from "./SignIn.vue"
+import SignIn from "./SignIn/SignIn.vue"
 
 export default {
   components: {

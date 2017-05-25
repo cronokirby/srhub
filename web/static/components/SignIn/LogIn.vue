@@ -1,16 +1,16 @@
 <template>
-  <div class="sign-in">
-    <div class="user-inp">
-      Username<br/>
-      <input v-model="username"/>
-    </div>
-    <div class="user-inp">
-      Password<br/>
-      <input type="password" v-model="password"/>
-    </div>
-    <div id="login-btn">
-      <button class="loginbtn">Log In</button>
-    </div>
+  <button class="closebtn"
+          v-on:click="$root.overlay = false">X</button>
+  <div class="user-inp">
+    Username<br/>
+    <input v-model="username"/>
+  </div>
+  <div class="user-inp">
+    Password<br/>
+    <input type="password" v-model="password"/>
+  </div>
+  <div id="login-btn">
+    <button class="loginbtn">Log In</button>
   </div>
 </template>
 
@@ -26,17 +26,18 @@ export default {
 </script>
 
 <style lang="scss">
-.sign-in {
-  position: absolute;
-  width: 240px;
-  top: 10%;
-  left: 0;
-  right: 0;
-  margin: auto auto;
-  border: 2px solid #2fc9cd;
-  box-shadow: 3px 3px 10px black;
-  z-index: 11;
-  padding: 10px;
+.closebtn {
+  all: unset;
+  float: right;
+  margin-right: -36px;
+  margin-top: -25px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 17px;
+  color: grey;
+
 }
 
 .user-inp {
