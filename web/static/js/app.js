@@ -15,7 +15,7 @@ const router = new Router({
 new Vue({
   el: "#app",
   data: {
-    overlay: false
+    overlay: true
   },
   router: router,
   render(createElement) {

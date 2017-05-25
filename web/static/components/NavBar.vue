@@ -38,7 +38,7 @@ export default {
   }
 
   a:hover, a:active {
-    background-color: #1cb9be;
+    background-color: #2fc9cd;
     box-shadow: 0px 0px 20px #133231;
   }
 

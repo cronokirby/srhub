@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss">
 * {
+  font-family: sans-serif;
   margin: 0px;
   padding: 0px;
 }
