@@ -8,8 +8,8 @@
       Password<br/>
       <input type="password" v-model="password"/>
     </div>
-    <div id="login-btn">
-      <button class="loginbtn">Log In</button>
+    <div class="login-btn">
+      <button>Log In</button>
     </div>
   </div>
 </template>
@@ -49,7 +49,7 @@ export default {
   }
 }
 
-#login-btn {
+.login-btn {
   padding-top: 10px;
   padding-bottom: 5px;
   text-align: center;
@@ -71,6 +71,4 @@ export default {
     box-shadow: inset 0px 0px 5px #133231;
   }
 }
-
-
 </style>

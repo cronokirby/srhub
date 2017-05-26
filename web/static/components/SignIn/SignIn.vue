@@ -1,8 +1,12 @@
 <template>
   <div class="sign-in">
     <div id="sign-in-nav">
-      <div class="sign-in-navel log-in">Log In</div>
-      <div class="sign-in-navel sign-up">Sign Up</div>
+      <div class="sign-in-navel log-in" v-on:click="toLogIn()">
+        Log In
+      </div>
+      <div class="sign-in-navel sign-up" v-on:click="toSignUp()">
+        Sign Up
+      </div>
       <div class="sign-in-phantom"></div>
     </div>
     <button class="closebtn"
@@ -13,6 +17,7 @@
 
 <script>
 import LogIn from "./LogIn.vue"
+import SignUp from "./SignUp.vue"
 
 export default {
   data() {
@@ -20,8 +25,17 @@ export default {
       view: LogIn
     }
   },
+  methods: {
+    toLogIn() {
+      this.view = LogIn
+    },
+    toSignUp() {
+      this.view = SignUp
+    }
+  },
   components: {
-    LogIn
+    LogIn,
+    SignUp
   }
 }
 </script>
