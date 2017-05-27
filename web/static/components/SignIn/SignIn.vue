@@ -11,7 +11,9 @@
     </div>
     <button class="closebtn"
             v-on:click="$root.overlay = false">X</button>
-    <component v-bind:is="view" class="sign-in-wrapper"></component>
+    <transition name="fade" mode="out-in">
+      <component v-bind:is="view" class="sign-in-wrapper"></component>
+    </transition>
   </div>
 </template>
 
@@ -22,7 +24,7 @@ import SignUp from "./SignUp.vue"
 export default {
   data() {
     return {
-      view: LogIn
+      view: SignUp
     }
   },
   methods: {
