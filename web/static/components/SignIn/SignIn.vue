@@ -1,10 +1,12 @@
 <template>
   <div class="sign-in">
     <div id="sign-in-nav">
-      <div class="sign-in-navel log-in" v-on:click="toLogIn()">
+      <div class="sign-in-navel log-in" v-bind:class="{active: loggingIn}"
+           v-on:click="toLogIn()">
         Log In
       </div>
-      <div class="sign-in-navel sign-up" v-on:click="toSignUp()">
+      <div class="sign-in-navel sign-up" v-bind:class="{active: !loggingIn}"
+           v-on:click="toSignUp()">
         Sign Up
       </div>
       <div class="sign-in-phantom"></div>
@@ -24,14 +26,17 @@ import SignUp from "./SignUp.vue"
 export default {
   data() {
     return {
-      view: SignUp
+      view: LogIn,
+      loggingIn: true
     }
   },
   methods: {
     toLogIn() {
+      this.loggingIn = true
       this.view = LogIn
     },
     toSignUp() {
+      this.loggingIn = false
       this.view = SignUp
     }
   },
@@ -72,8 +77,11 @@ export default {
   float: left;
   padding-left: 3px;
   padding-right: 3px;
-  border-bottom: 2px solid #3a3a49;
   transition: color 0.2s;
+}
+
+.sign-in-navel.active {
+ border-bottom: 2px solid #3a3a49;
 }
 
 .sign-in-navel:hover {
