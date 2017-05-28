@@ -1,5 +1,5 @@
 <template>
-  <div v-if="$root.overlay" class="overlay">
+  <div v-if="$root.overlay.on" class="overlay">
     <sign-in></sign-in>
   </div>
 </template>

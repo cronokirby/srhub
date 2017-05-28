@@ -12,7 +12,7 @@
       <div class="sign-in-phantom"></div>
     </div>
     <button class="closebtn"
-            v-on:click="$root.overlay = false">X</button>
+            v-on:click="$root.overlay.on = false">X</button>
     <transition name="fade" mode="out-in">
       <component v-bind:is="view" class="sign-in-wrapper"></component>
     </transition>
