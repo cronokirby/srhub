@@ -3,7 +3,7 @@ defmodule SRHub.Repo.Migrations.CreateUser do
 
   def change do
     create table(:users) do
-      add :username, :string
+      add :username, :string, size: 30
       add :email, :string, null: false
       add :profile, :string
       add :password_hash, :string
