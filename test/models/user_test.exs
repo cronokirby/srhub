@@ -3,7 +3,7 @@ defmodule SRHub.UserTest do
   alias SRHub.User
 
   @valid %{email: "foo@bar.com", password: "mobydick",
-           profile: "http://imgur.com/HCl0urO"}
+           username: "mobyman", profile: "http://imgur.com/HCl0urO"}
 
   test "valid attributes" do
     changeset = User.changeset(%User{}, @valid)
@@ -20,7 +20,13 @@ defmodule SRHub.UserTest do
     refute changeset.valid?
   end
 
-  test "registration, password too short" do
+  test "username too long" do
+    too_long = Enum.join(1..31)
+    changeset = User.changeset(%User{}, Map.put(@valid, :username, too_long))
+    refute changeset.valid?
+  end
+
+  test "registration, valid attrs" do
     changeset = User.registration_changeset(%User{}, @valid)
     assert changeset.changes.password_hash
     assert changeset.valid?
