@@ -13,9 +13,10 @@ defmodule SRHub.SessionControllerTest do
 
   test "creates and renders resource when data is valid", %{conn: conn} do
     conn = post conn, session_path(conn, :create), user: @valid
-    token = json_response(conn, 201)["token"]
-    assert token
-    assert Repo.get_by(Session, token: token)
+    resp = json_response(conn, 201)
+    assert resp["token"]
+    assert resp["user"]
+    assert Repo.get_by(Session, token: resp["token"])
   end
 
   test "does not create resource when password is invalid", %{conn: conn} do

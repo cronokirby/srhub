@@ -41,4 +41,13 @@ defmodule SRHub.UserControllerTest do
     assert resp["errors"] != %{}
     assert resp["errors"]["email"]
   end
+
+
+  test "can signup", %{conn: conn} do
+    resp = conn
+      |> post("/signup", user: @valid)
+      |> json_response(201)
+    assert resp["token"]
+    assert resp["user"]
+  end
 end

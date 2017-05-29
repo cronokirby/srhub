@@ -13,7 +13,7 @@ defmodule SRHub.SessionController do
           |> Repo.insert
         conn
         |> put_status(:created)
-        |> render("session.json", session: session)
+        |> render("session.json", %{session: session, user: user})
       user ->
         conn
         |> put_status(:unauthorized)
