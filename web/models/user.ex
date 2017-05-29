@@ -26,6 +26,7 @@ defmodule SRHub.User do
     model
     |> changeset(params)
     |> cast(params, ["password"])
+    |> validate_required([:password])
     |> validate_length(:password, min: 6)
     |> put_password_hash
   end

@@ -1,5 +1,5 @@
 import "phoenix_html"
-
+import axios from "axios"
 import Vue from "vue"
 import Router from "vue-router"
 import Base from "../components/Base.vue"
@@ -10,7 +10,9 @@ Vue.use(Router)
 const data = {
   overlay: {
     on: false,
-    to: ""
+    to: "",
+    user: null,
+    token: null
   }
 }
 
@@ -36,5 +38,11 @@ new Vue({
   router: router,
   render(createElement) {
     return createElement(Base, {})
+  },
+  methods: {
+    addUser(user, token) {
+      this.user = user
+      this.token = token
+    }
   }
 })

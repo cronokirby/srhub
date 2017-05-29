@@ -15,8 +15,6 @@ defmodule SRHub.Router do
 
   pipeline :secure_api do
     plug :accepts, ["json"]
-    plug :fetch_session
-    plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
 
@@ -28,7 +26,7 @@ defmodule SRHub.Router do
 
   scope "/", SRHub do
     pipe_through :secure_api
-
+    # Intended to be used by the frontend code.
     post "/signup", UserController, :signup
   end
 

@@ -29,6 +29,7 @@ defmodule SRHub.UserController do
         |> Repo.insert
       conn
       |> put_status(:created)
+      |> put_resp_cookie("token", session.token)
       |> render(SRHub.SessionView, "session.json",
                 %{session: session, user: user})
     else

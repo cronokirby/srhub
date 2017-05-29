@@ -19,21 +19,20 @@
       <input v-model="email"/>
     </div>
     <div class="login-btn">
-      <button>Sign Up</button>
+      <button v-on:click="submit" v-bind:disabled="!hasNoErrors">Sign Up</button>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios"
+
 export default {
   data() {
     return {
       username: "",
       password: "",
-      email: "",
-      errors: {
-        password: ""
-      }
+      email: ""
     }
   },
   computed: {
@@ -41,10 +40,35 @@ export default {
       let l = this.password.length
       if (l > 0 && l < 6) {
         return "Must be at least 6 characters long"
+      } else {
+        return ""
       }
     },
-    emailError() {
-
+    hasNoErrors() {
+      let notEmpty = [this.username, this.password, this.email]
+                     .every(e => e !== "")
+      let noPassError = this.passwordError === ""
+      return notEmpty && noPassError
+    }
+  },
+  methods: {
+    submit() {
+      if (this.hasNoErrors) {
+        let data = {user: {
+          username: this.username,
+          email: this.email,
+          password: this.password
+        }}
+        axios.post("/signup", data)
+        .then(resp => {
+          this.$root.addUser(resp.data.user, resp.data.token)
+        })
+        .catch(error => {
+          if (error.response) {
+            console.log(error.response)
+          }
+        })
+      }
     }
   }
 }
