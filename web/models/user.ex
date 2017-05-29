@@ -18,6 +18,8 @@ defmodule SRHub.User do
     |> validate_length(:email, min: 1, max: 255)
     |> validate_format(:email, ~r/@/)
     |> validate_length(:username, min: 1, max: 30)
+    |> unique_constraint(:username)
+    |> unique_constraint(:email)
   end
 
   def registration_changeset(model, params \\ :empty) do

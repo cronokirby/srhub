@@ -23,4 +23,22 @@ defmodule SRHub.UserControllerTest do
       |> json_response(422)
     assert resp["errors"] != %{}
   end
+
+  test "can't create with duplicate name", %{conn: conn} do
+    resp = conn
+      |> post(user_path(conn, :create), user: @valid)
+      |> post(user_path(conn, :create), user: @valid)
+      |> json_response(422)
+    assert resp["errors"] != %{}
+    assert resp["errors"]["username"]
+  end
+
+  test "can't create with duplicate email", %{conn: conn} do
+    resp = conn
+      |> post(user_path(conn, :create), user: Map.put(@valid, :username, "ck"))
+      |> post(user_path(conn, :create), user: @valid)
+      |> json_response(422)
+    assert resp["errors"] != %{}
+    assert resp["errors"]["email"]
+  end
 end
