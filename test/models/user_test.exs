@@ -36,5 +36,6 @@ defmodule SRHub.UserTest do
     changeset = User.registration_changeset(
       %User{}, Map.put(@valid, :password, "12345")
     )
+    refute changeset.valid?
   end
 end

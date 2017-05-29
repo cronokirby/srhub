@@ -9,7 +9,7 @@ defmodule SRHub.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
+  pipeline :open_api do
     plug :accepts, ["json"]
   end
 
@@ -17,5 +17,11 @@ defmodule SRHub.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+  end
+
+  scope "/api", SRHub do
+    pipe_through :open_api
+
+    resources "/users", UserController, only: [:create]
   end
 end
