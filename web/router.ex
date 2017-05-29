@@ -23,5 +23,6 @@ defmodule SRHub.Router do
     pipe_through :open_api
 
     resources "/users", UserController, only: [:create]
+    resources "/sessions", SessionController, only: [:create]
   end
 end
