@@ -16,13 +16,18 @@
       <sign-up-error v-bind:error="errors.email"></sign-up-error>
     </div>
     <div class="login-btn">
-      <button v-on:click="submit" v-bind:disabled="!hasNoErrors">Sign Up</button>
+      <div class="box"></div>
+      <button class="box"v-on:click="submit" v-bind:disabled="!hasNoErrors">
+        Sign Up
+      </button>
+      <loading class="box loading" v-bind:loading="loading"></loading>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios"
+import Loading from "../Loading.vue"
 import SignUpError from "./SignUpError.vue"
 
 const defaultErrors = {
@@ -34,6 +39,7 @@ const defaultErrors = {
 export default {
   data() {
     return {
+      loading: false,
       username: "",
       password: "",
       email: "",
@@ -64,12 +70,15 @@ export default {
           email: this.email,
           password: this.password
         }}
+        this.loading = true
         axios.post("/signup", data)
         .then(resp => {
+          this.loading = false
           this.$root.addUser(resp.data.user, resp.data.token)
           this.errors = defaultErrors
         })
         .catch(error => {
+          this.loading = false
           if (error.response) {
             this.errors = error.response.data.errors
             console.log(this.errors)
@@ -79,7 +88,8 @@ export default {
     }
   },
   components: {
-    SignUpError
+    SignUpError,
+    Loading
   }
 }
 </script>

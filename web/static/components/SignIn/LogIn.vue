@@ -9,18 +9,25 @@
       <input type="password" v-model="password"/>
     </div>
     <div class="login-btn">
-      <button>Log In</button>
+      <div class="box"></div>
+      <button class="box">Log In</button>
+      <loading class="box loading"></loading>
     </div>
   </div>
 </template>
 
 <script>
+import Loading from "../Loading.vue"
+
 export default {
   data() {
     return {
       username: "",
       password: ""
     }
+  },
+  components: {
+    Loading
   }
 }
 </script>
@@ -52,7 +59,19 @@ export default {
 .login-btn {
   padding-top: 10px;
   padding-bottom: 5px;
+  display: flex;
   text-align: center;
+
+  .box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loading {
+    height: 30px;
+  }
 
   button {
     all: unset;
