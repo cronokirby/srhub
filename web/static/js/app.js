@@ -25,7 +25,6 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresLogIn)) {
     data.overlay = {on: true, to: to.path}
-    console.log("requires log in")
     next(false)
     return;
   }
