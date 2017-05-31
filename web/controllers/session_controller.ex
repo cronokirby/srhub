@@ -8,9 +8,13 @@ defmodule SRHub.SessionController do
     user = Repo.get_by(User, username: user_params["username"])
     cond do
       user && checkpw(user_params["password"], user.password_hash) ->
-        {:ok, session} =
+        maybe_sess = Repo.preload(user, :session).session
+        {:ok, session} = if maybe_sess do
+          {:ok, maybe_sess}
+        else
           Session.create_changeset(%Session{}, %{user_id: user.id})
           |> Repo.insert
+        end
         conn
         |> put_status(:created)
         |> render("session.json", %{session: session, user: user})

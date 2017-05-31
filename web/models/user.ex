@@ -7,7 +7,7 @@ defmodule SRHub.User do
     field :email, :string
     field :password_hash, :string
     field :password, :string, virtual: true
-
+    has_one :session, SRHub.Session
     timestamps()
   end
 

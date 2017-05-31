@@ -54,7 +54,7 @@ export default {
   position: absolute;
   width: 240px;
   top: 10%;
-  left: 40%;
+  left: 42%;
   right: 0;
   border: 2px solid #2fc9cd;
   box-shadow: 3px 3px 8px black;

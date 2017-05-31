@@ -30,4 +30,14 @@ defmodule SRHub.SessionControllerTest do
            user: Map.put(@valid, :username, "kk")
     assert json_response(conn, 401)["errors"] != %{}
   end
+
+  test "refetches if already created", %{conn: conn} do
+    r = fn conn -> conn
+      |> post(session_path(conn, :create), user: @valid)
+      |> json_response(201)
+    end
+    r1 = r.(conn)
+    r2 = r.(conn)
+    assert r1["token"] == r2["token"]
+  end
 end

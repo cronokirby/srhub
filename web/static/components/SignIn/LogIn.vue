@@ -22,12 +22,26 @@ import Loading from "../Loading.vue"
 export default {
   data() {
     return {
+      loading: false,
       username: "",
       password: ""
     }
   },
   components: {
     Loading
+  },
+  methods: {
+    submit() {
+      let data = {user: {
+        username: this.username,
+        password: this.password
+      }}
+      this.loading = true
+      axios.post("/api/sessions/create", data)
+      .then(resp => {
+
+      })
+    }
   }
 }
 </script>
