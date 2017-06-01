@@ -47,6 +47,7 @@ export default {
         this.loading = false
         this.error = ""
         this.$root.addUser(resp.data.user, resp.data.token)
+        this.$root.removeOverlay()
       })
       .catch(error => {
         this.loading = false

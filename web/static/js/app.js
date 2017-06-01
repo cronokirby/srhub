@@ -23,7 +23,8 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresLogIn)) {
+  if (to.matched.some(record => record.meta.requiresLogIn)
+      && data.token == null) {
     data.overlay = {on: true, to: to.path}
     next(false)
     return;
@@ -42,7 +43,10 @@ new Vue({
     addUser(user, token) {
       this.user = user
       this.token = token
-      console.log(user)
+    },
+    removeOverlay() {
+      this.overlay.on = false
+      this.$router.push(this.overlay.to)
     }
   }
 })

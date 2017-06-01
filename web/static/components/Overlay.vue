@@ -1,7 +1,9 @@
 <template>
-  <div v-if="$root.overlay.on" class="overlay">
-    <sign-in></sign-in>
-  </div>
+  <transition name="fade">
+    <div v-if="$root.overlay.on" class="overlay">
+      <sign-in></sign-in>
+    </div>
+  </transition>
 </template>
 
 <script>
