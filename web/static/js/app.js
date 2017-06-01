@@ -11,9 +11,9 @@ const data = {
   overlay: {
     on: false,
     to: "",
-    user: null,
-    token: null
-  }
+  },
+  user: null,
+  token: null
 }
 
 const router = new Router({
@@ -42,6 +42,7 @@ new Vue({
     addUser(user, token) {
       this.user = user
       this.token = token
+      console.log(user)
     }
   }
 })
