@@ -81,7 +81,6 @@ export default {
           this.loading = false
           if (error.response) {
             this.errors = error.response.data.errors
-            console.log(this.errors)
           }
         })
       }
