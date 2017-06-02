@@ -12,7 +12,7 @@ const data = {
     on: false,
     to: "",
   },
-  user: null,
+  user: {username: "cronokirby"},
   token: null
 }
 
