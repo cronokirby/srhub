@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>Profile</div>
+    <div @click="$router.push('profile')">Profile</div>
     <div>Sign Out</div>
   </div>
 </template>

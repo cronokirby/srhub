@@ -1,6 +1,6 @@
 <template>
   <div class="log-in">
-    <sign-up-error v-bind:error="error" class="log-in-error"></sign-up-error>
+    <sign-up-error :error="error" class="log-in-error"></sign-up-error>
     <div class="user-inp">
       Username<br/>
       <input v-model="username"/>
@@ -9,10 +9,10 @@
       Password<br/>
       <input type="password" v-model="password"/>
     </div>
-    <div class="login-btn" v-on:click="submit">
+    <div class="login-btn" :click="submit">
       <div class="box"></div>
       <button class="box">Log In</button>
-      <loading class="box loading" v-bind:loading="loading"></loading>
+      <loading class="box loading" :loading="loading"></loading>
     </div>
   </div>
 </template>

@@ -3,24 +3,24 @@
     <div class="user-inp">
       Username<br/>
       <input v-model="username"/>
-      <sign-up-error v-bind:error="errors.username"></sign-up-error>
+      <sign-up-error :error="errors.username"></sign-up-error>
     </div>
     <div class="user-inp">
       Password<br/>
       <input type="password" v-model="password"/>
-      <sign-up-error v-bind:error="passwordError"></sign-up-error>
+      <sign-up-error :error="passwordError"></sign-up-error>
     </div>
     <div class="user-inp">
       Email<br/>
       <input v-model="email"/>
-      <sign-up-error v-bind:error="errors.email"></sign-up-error>
+      <sign-up-error :error="errors.email"></sign-up-error>
     </div>
     <div class="login-btn">
       <div class="box"></div>
-      <button class="box"v-on:click="submit" v-bind:disabled="!hasNoErrors">
+      <button class="box":click="submit" :disabled="!hasNoErrors">
         Sign Up
       </button>
-      <loading class="box loading" v-bind:loading="loading"></loading>
+      <loading class="box loading" :loading="loading"></loading>
     </div>
   </div>
 </template>

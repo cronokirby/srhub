@@ -12,13 +12,14 @@ const data = {
     on: false,
     to: "",
   },
-  user: {username: "cronokirby"},
-  token: null
+  user: {username: "cronokirby", profile: "http://imgur.com/HCl0urO.png"},
+  token: "o"
 }
 
 const router = new Router({
   routes: [
-    {path: "/chat", meta: {requiresLogIn: true}}
+    {path: "/chat", meta: {requiresLogIn: true}},
+    {path: "/profile", meta: {requiresLogIn: true}}
   ]
 })
 

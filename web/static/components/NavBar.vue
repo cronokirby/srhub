@@ -1,13 +1,13 @@
 <template>
   <div id="navlinks">
-    <div v-for="path in navlinks" class="navlink" v-bind:id="path[0]">
+    <div v-for="path in navlinks" class="navlink" :id="path[0]">
       <router-link v-bind:to="path[1]">{{path[0]}}</router-link>
     </div>
-    <div class="profile" v-if="user" v-on:click="dropdown = !dropdown">
-      <img v-bind:src="user.profile" height="26px" width="26px"/>
+    <div class="profile" v-if="user" @click="dropdown = !dropdown">
+      <img :src="user.profile" height="26px" width="26px"/>
       <span class="username">{{user.username}}</span>
       <user-dropdown class="user-dropdown"
-                     v-bind:class="{active: dropdown}"></user-dropdown>
+                    :class="{active: dropdown}"></user-dropdown>
     </div>
   </div>
 </template>

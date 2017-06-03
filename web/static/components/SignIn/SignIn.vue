@@ -1,20 +1,19 @@
 <template>
   <div class="sign-in">
     <div id="sign-in-nav">
-      <div class="sign-in-navel log-in" v-bind:class="{active: loggingIn}"
-           v-on:click="toLogIn()">
+      <div class="sign-in-navel log-in" :class="{active: loggingIn}"
+          @click="toLogIn()">
         Log In
       </div>
-      <div class="sign-in-navel sign-up" v-bind:class="{active: !loggingIn}"
-           v-on:click="toSignUp()">
+      <div class="sign-in-navel sign-up" :class="{active: !loggingIn}"
+          @click="toSignUp()">
         Sign Up
       </div>
       <div class="sign-in-phantom"></div>
     </div>
-    <button class="closebtn"
-            v-on:click="$root.overlay.on = false">X</button>
+    <button class="closebtn" :click="$root.overlay.on = false">X</button>
     <transition name="fade" mode="out-in">
-      <component v-bind:is="view" class="sign-in-wrapper"></component>
+      <component :is="view" class="sign-in-wrapper"></component>
     </transition>
   </div>
 </template>

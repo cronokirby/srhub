@@ -1,6 +1,6 @@
 <template>
   <div class="base">
-    <nav-bar v-bind:user="$root.user"></nav-bar>
+    <nav-bar :user="$root.user"></nav-bar>
     <overlay></overlay>
   </div>
 </template>
