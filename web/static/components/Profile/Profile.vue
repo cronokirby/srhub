@@ -37,6 +37,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../scss/colors";
+
 .profile {
   margin-top: 50px;
 
@@ -47,11 +49,11 @@ export default {
     padding-top: 20px;
     padding-bottom: 30px;
     width: 200px;
-    border: 2px solid #18b0b5;
+    border: 2px solid $mint-light;
   }
 
   .username {
-    color: #dce2e2;
+    color: $text;
     font-size: 20px;
     font-weight: bolder;
   }
@@ -62,7 +64,7 @@ export default {
     margin-top: 10px;
     padding-top: 30px;
     width: 40%;
-    border: 2px solid #18b0b5;
+    border: 2px solid $mint-light;
   }
 }
 </style>

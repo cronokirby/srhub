@@ -13,10 +13,12 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../scss/colors";
+
 .sign-up-error {
-  color: #da5151;
+  color: $error;
   font-size: 12px;
-  border: 1px solid #da5151;
+  border: 1px solid $error;
   background-color: rgba(238, 52, 26, 0.34);
   margin-top: 10px;
   margin-right: 28px;

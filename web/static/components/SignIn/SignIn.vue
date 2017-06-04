@@ -47,15 +47,17 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../scss/colors";
+
 .sign-in {
-  background-color: #3a3a49;
+  background-color: $background;
   padding: 0px;
   position: absolute;
   width: 240px;
   top: 10%;
   left: 42%;
   right: 0;
-  border: 2px solid #2fc9cd;
+  border: 2px solid $mint;
   box-shadow: 3px 3px 8px black;
   z-index: 11
 }
@@ -63,13 +65,13 @@ export default {
 #sign-in-nav {
   height: 30px;
   width: 100%;
-  border-bottom: 2px solid #2fc9cd;
+  border-bottom: 2px solid $mint;
 }
 
 .sign-in-navel {
   height: 100%;
   line-height: 30px;
-  color: #dcdcdc;
+  color: $text;
   font-weight: 500;
   width: 80px;
   text-align: center;
@@ -80,7 +82,7 @@ export default {
 }
 
 .sign-in-navel.active {
- border-bottom: 2px solid #3a3a49;
+ border-bottom: 2px solid $background;
 }
 
 .sign-in-navel:hover {
@@ -88,9 +90,9 @@ export default {
 }
 
 .sign-up {
-  border-right: 1px solid #2fc9cd;
-  border-left: 1px solid #2fc9cd;
-  border-bottom: 1px solid #2fc9cd;
+  border-right: 1px solid $mint;
+  border-left: 1px solid $mint;
+  border-bottom: 1px solid $mint;
 }
 
 .sign-in-wrapper {

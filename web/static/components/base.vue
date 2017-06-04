@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../scss/colors";
+
 * {
   font-family: sans-serif;
   margin: 0px;
@@ -27,7 +29,7 @@ export default {
 
 body {
   position: relative;
-  background-color: #3a3a49;
+  background-color: $background;
 }
 
 .base {
@@ -42,12 +44,12 @@ button {
   display: inline-block;
   font-size: 16px;
   font-weight: 500;
-  color: #d2e3e3;
-  background-color: #18b0b5;
+  color: $text;
+  background-color: $mint-light;
   box-shadow: 3px 3px 10px black;
 }
 
 button:active {
-  box-shadow: inset 0px 0px 5px #133231;
+  box-shadow: inset 0px 0px 5px $mint-dark;
 }
 </style>

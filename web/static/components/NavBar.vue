@@ -34,8 +34,10 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../scss/colors";
+
 #navlinks {
-  background-color: #18b0b5;
+  background-color: $mint-light;
   align-items: center;
   padding-left: 8%;
   padding-right: 8%;
@@ -46,14 +48,14 @@ export default {
     display: block;
     height: 100%;
     line-height: 250%;
-    color: #dce2e2;
+    color: $text;
     text-decoration: none;
     text-align: center;
   }
 
   a:hover, a:active {
-    background-color: #2fc9cd;
-    box-shadow: 0px 0px 20px #133231;
+    background-color: $mint;
+    box-shadow: 0px 0px 20px $mint-dark;
   }
 
   .navlink {
@@ -69,13 +71,13 @@ export default {
     float: right;
     height: 100%;
     width: 120px;
-    color: #dce2e2;
+    color: $text;
     font-weight: 500;
     padding-right: 10px;
     padding-left: 10px;
 
     img {
-      border: 2px solid #228a8c;
+      border: 2px solid $mint-mid;
       margin-top: 6px;
       margin-right: 5px;
     }
@@ -87,8 +89,8 @@ export default {
     .user-dropdown {
       transform: translateY(-1em);
       opacity: 0;
-      background-color: #3a3a49;
-      border: 2px solid #18b0b5;
+      background-color: $background;
+      border: 2px solid $mint-light;
       box-shadow: 4px 4px 10px black;
       transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s;
     }
@@ -102,8 +104,8 @@ export default {
   }
 
   .user-profile:hover {
-    background-color: #2fc9cd;
-    box-shadow: 0px 0px 20px #133231;
+    background-color: $mint;
+    box-shadow: 0px 0px 20px $mint-dark;
   }
 
 }

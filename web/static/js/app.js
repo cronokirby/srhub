@@ -13,8 +13,8 @@ const data = {
     on: false,
     to: "",
   },
-  user: {username: "cronokirby", profile: "http://imgur.com/HCl0urO.png"},
-  token: "null"
+  username: null,
+  token: null
 }
 
 const router = new Router({

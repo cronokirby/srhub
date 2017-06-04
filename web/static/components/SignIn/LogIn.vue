@@ -61,6 +61,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../scss/colors";
+
 .user-inp {
   color: white;
   $vertical: 15px;
@@ -72,15 +74,15 @@ export default {
     height: 24px;
     font-size: 14px;
     font-weight: 550;
-    color: #232a2d;
-    border: solid 1px #dcdcdc;
+    color: $text-dark;
+    border: solid 1px $text;
     transition: box-shadow 0.3s, border 0.3s;
   }
 
   input:focus {
     outline: none;
-    border: solid 1px #707070;
-    box-shadow: 0px 0px 4px 1px #54d7da;
+    border: solid 1px $mint-light2;
+    box-shadow: 0px 0px 4px 1px $mint-light2;
   }
 }
 

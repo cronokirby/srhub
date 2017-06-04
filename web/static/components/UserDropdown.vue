@@ -12,6 +12,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../scss/colors";
+
 .user-dropdown {
   div {
     width: 85%;
@@ -24,7 +26,7 @@ export default {
 
   div:hover {
     color: white;
-    background-color: #4b4b5c;
+    background-color: $background-light;
   }
 }
 </style>
