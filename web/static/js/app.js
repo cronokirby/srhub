@@ -3,6 +3,7 @@ import axios from "axios"
 import Vue from "vue"
 import Router from "vue-router"
 import Base from "../components/Base.vue"
+import Profile from "../components/Profile/Profile.vue"
 
 Vue.component("base", Base)
 Vue.use(Router)
@@ -13,13 +14,14 @@ const data = {
     to: "",
   },
   user: {username: "cronokirby", profile: "http://imgur.com/HCl0urO.png"},
-  token: "o"
+  token: "null"
 }
 
 const router = new Router({
   routes: [
     {path: "/chat", meta: {requiresLogIn: true}},
-    {path: "/profile", meta: {requiresLogIn: true}}
+    {path: "/profile", component: Profile, props: {data: data},
+     meta: {requiresLogIn: true}}
   ]
 })
 

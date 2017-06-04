@@ -2,6 +2,7 @@
   <div class="base">
     <nav-bar :user="$root.user"></nav-bar>
     <overlay></overlay>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -34,5 +35,19 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+button {
+  all: unset;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #d2e3e3;
+  background-color: #18b0b5;
+  box-shadow: 3px 3px 10px black;
+}
+
+button:active {
+  box-shadow: inset 0px 0px 5px #133231;
 }
 </style>

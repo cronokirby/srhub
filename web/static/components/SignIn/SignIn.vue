@@ -11,7 +11,7 @@
       </div>
       <div class="sign-in-phantom"></div>
     </div>
-    <button class="closebtn" :click="$root.overlay.on = false">X</button>
+    <button class="closebtn" @click="$root.overlay.on = false">X</button>
     <transition name="fade" mode="out-in">
       <component :is="view" class="sign-in-wrapper"></component>
     </transition>

@@ -9,7 +9,7 @@
       Password<br/>
       <input type="password" v-model="password"/>
     </div>
-    <div class="login-btn" :click="submit">
+    <div class="login-btn" @click="submit">
       <div class="box"></div>
       <button class="box">Log In</button>
       <loading class="box loading" :loading="loading"></loading>
@@ -102,20 +102,8 @@ export default {
   }
 
   button {
-    all: unset;
-    display: inline-block;
-    background-color: red;
-    font-size: 16px;
     padding: 6px;
     width: 60px;
-    font-weight: 500;
-    color: #d2e3e3;
-    background-color: #18b0b5;
-    box-shadow: 3px 3px 10px black;
-  }
-
-  button:active {
-    box-shadow: inset 0px 0px 5px #133231;
   }
 }
 

@@ -3,7 +3,7 @@
     <div v-for="path in navlinks" class="navlink" :id="path[0]">
       <router-link v-bind:to="path[1]">{{path[0]}}</router-link>
     </div>
-    <div class="profile" v-if="user" @click="dropdown = !dropdown">
+    <div class="user-profile" v-if="user" @click="dropdown = !dropdown">
       <img :src="user.profile" height="26px" width="26px"/>
       <span class="username">{{user.username}}</span>
       <user-dropdown class="user-dropdown"
@@ -40,7 +40,8 @@ export default {
   padding-left: 8%;
   padding-right: 8%;
   height: 40px;
-  box-shadow: 3px 3px 20px black;
+  box-shadow: 6px 6px 20px black;
+
   a:link, a:visited {
     display: block;
     height: 100%;
@@ -63,13 +64,12 @@ export default {
     font-weight: bold;
   }
 
-  .profile {
-    display: inline-block;
-    float: right;
+  .user-profile {
     display: block;
+    float: right;
     height: 100%;
+    width: 120px;
     color: #dce2e2;
-    font-family: sans-serif;
     font-weight: 500;
     padding-right: 10px;
     padding-left: 10px;
@@ -101,7 +101,7 @@ export default {
     }
   }
 
-  .profile:hover {
+  .user-profile:hover {
     background-color: #2fc9cd;
     box-shadow: 0px 0px 20px #133231;
   }
