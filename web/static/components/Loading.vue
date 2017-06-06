@@ -1,9 +1,9 @@
 <template>
   <div class="loading-container">
-    <div class="loading-rect loading-rect-1" v-show="loading"></div>
-    <div class="loading-rect loading-rect-2" v-show="loading"></div>
-    <div class="loading-rect loading-rect-3" v-show="loading"></div>
-    <div class="loading-rect loading-rect-4" v-show="loading"></div>
+    <div class="loading-rect loading-rect-1" ></div>
+    <div class="loading-rect loading-rect-2" ></div>
+    <div class="loading-rect loading-rect-3" ></div>
+    <div class="loading-rect loading-rect-4" ></div>
   </div>
 </template>
 
